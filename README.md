@@ -17,6 +17,10 @@ For this example, we are using the **Login Activity** Android Studio template
    Or, right-click on the test class in the projects panel, and select `Run`.
    > **Obs:** More explanation about running tests, see this link: [Running Espresso tests](http://www.vogella.com/tutorials/AndroidTestingEspresso/article.html#espresso_runningespressotests)
 
+4. Choice a avd emulator. The UI test will run like the screen below:
+
+![Login UI Test](https://raw.githubusercontent.com/mfdeveloper/android-uitest/master/images/android-uitest-login.gif)
+
 ### Links: tutorials and questions
 
 The refence links below contains tutorials and helpers about Android testing.
