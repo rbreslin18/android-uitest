@@ -29,6 +29,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.metova.cappuccino.Cappuccino;
+import com.metova.cappuccino.CappuccinoResourceWatcher;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +65,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+    private CappuccinoResourceWatcher mCappuccinoWatcher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +97,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        mCappuccinoWatcher = Cappuccino.newIdlingResourceWatcher(this);
     }
 
     private void populateAutoComplete() {
@@ -308,12 +315,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
 
+            mCappuccinoWatcher.busy();
+
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 return false;
             }
+
+            mCappuccinoWatcher.idle();
 
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
@@ -323,6 +334,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
             }
 
+
             // TODO: register the new account here.
             return true;
         }
@@ -330,10 +342,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
+
             showProgress(false);
 
             if (success) {
-                finish();
+//                finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
