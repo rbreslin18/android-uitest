@@ -32,7 +32,7 @@ jobs:
        cp -R cmdline-tools android-sdk/cmdline-tools/latest
        ls -la android-sdk
     - name: Install android SDK
-      run: yes | /home/runner/work/android-uitest/android-uitest/android-sdk/cmdline-tools/latest/cmdline-tools/bin/sdkmanager "platforms;android-24" 
+      run: yes | /home/runner/work/android-uitest/android-sdk/cmdline-tools/latest/cmdline-tools/bin/sdkmanager "platforms;android-24" 
     - name: Build with Gradle
       run: ./gradlew build
     - name: Grant execute permission for gradlew
