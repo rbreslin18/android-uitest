@@ -32,7 +32,7 @@ jobs:
        yes | androidsdk "platforms;android-24" 
        yes | androidsdk "platform-tools" 
        yes | androidsdk "emulator" 
-       yes | androidsdk "avdmanager"
+       yes | androidsdk --list
        ls -la /home/runner/AndroidSDK/emulator 
     - name: Build with Gradle
       run: |
@@ -40,5 +40,7 @@ jobs:
        export ANDROID_HOME=/home/runner/AndroidSDK/ && ./gradlew build
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: AVD Setup
+      run: /home/runner/AndroidSDK/emulator/emulator
     - name: Emulator Test
       run: /home/runner/AndroidSDK/emulator/emulator
