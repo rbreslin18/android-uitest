@@ -25,6 +25,7 @@ jobs:
       run: |
        pwd
        sudo snap install androidsdk
+       export ANDROID_HOME=/home/runner/AndroidSDK
        pwd
     - name: Install android SDK
       run: yes | androidsdk "platforms;android-24" 
