@@ -44,6 +44,6 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: AVD Setup
-      run: echo no | /home/runner/AndroidSDK/cmdline-tools/latest/bin/avdmanager create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-23;google_apis;x86_64' /home/runner/AndroidSDK/cmdline-tools/latest/bin/avdmanager 
+      run: echo no | /home/runner/AndroidSDK/cmdline-tools/latest/bin/avdmanager create avd --force --name testAVD --abi google_apis/x86_64 --package 'system-images;android-23;google_apis;x86_64' 
     - name: Emulator Test
       run: /home/runner/AndroidSDK/emulator/emulator
