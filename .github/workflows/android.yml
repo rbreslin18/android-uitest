@@ -32,7 +32,7 @@ jobs:
        yes | androidsdk "platforms;android-24" 
        yes | androidsdk "platform-tools" 
        yes | androidsdk "emulator" 
-       ls -la /home/runner/AndroidSDK 
+       ls -la /home/runner/AndroidSDK/emulator 
     - name: Build with Gradle
       run: |
        export ANDROID_SDK_ROOT=/home/runner/AndroidSDK/
