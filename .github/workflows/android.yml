@@ -29,6 +29,7 @@ jobs:
        unzip commandlinetools-linux-9123335_latest.zip
        cp -R cmdline-tools android-sdk/cmdline-tools/latest
        ls -la android-sdk/cmdline-tools/latest/cmdline-tools
+       pwd
     - name: Install android SDK
       run: yes | /home/runner/work/android-uitest/android-sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-24" 
     - name: Build with Gradle
