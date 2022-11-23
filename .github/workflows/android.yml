@@ -33,6 +33,7 @@ jobs:
        yes | androidsdk "platform-tools" 
        yes | androidsdk "emulator" 
        yes | androidsdk "cmdline-tools;latest"
+       yes | androidsdk "system-images;android-23;google_apis;x86_64"
        androidsdk --list
        ls -la /home/runner/AndroidSDK/
        ls -la /home/runner/AndroidSDK/cmdline-tools/latest/bin
