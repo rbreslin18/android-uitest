@@ -30,7 +30,7 @@ jobs:
        sudo apt update
        sudo apt upgrade
        sudo snap install androidsdk
-       sudo apt install apt-get install libgl1-mesa-dev
+       sudo apt-get install libgl1-mesa-dev
        sudo apt install install android-studio
        echo $ANDROID_HOME
        echo $ANDROID_SDK_ROOT
