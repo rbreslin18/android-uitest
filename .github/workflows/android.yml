@@ -24,7 +24,10 @@ jobs:
     - name: Install SDK Manager
       run: |
        pwd
+       sudo apt get update
+       sudo apt get upgrade
        sudo snap install androidsdk
+       sudo apt install google-android-emulator-installer
        echo $ANDROID_HOME
        echo $ANDROID_SDK_ROOT
        echo $ANDROID_SDK_HOME
