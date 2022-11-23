@@ -33,6 +33,7 @@ jobs:
     - name: Install android SDK
       run: |
        yes | androidsdk "platforms;android-24" 
+       yes | androidsdk "platform-tools;emulator" 
        ls -la /home/runner/AndroidSDK 
     - name: Build with Gradle
       run: |
