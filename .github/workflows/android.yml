@@ -34,7 +34,7 @@ jobs:
        yes | androidsdk "emulator" 
        yes | androidsdk "cmdline-tools;latest"
        androidsdk --list
-       ls -la /home/runner/AndroidSDK/latest/
+       ls -la /home/runner/AndroidSDK/cmdline-tools
        ls -la /home/runner/AndroidSDK/emulator 
     - name: Build with Gradle
       run: |
