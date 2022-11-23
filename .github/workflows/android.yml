@@ -40,7 +40,5 @@ jobs:
        export ANDROID_HOME=/home/runner/AndroidSDK/ && ./gradlew build
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
     - name: Emulator Test
-      run: androidsdk -list-avds
+      run: emulator -list-avds
