@@ -30,8 +30,9 @@ jobs:
        pwd
     - name: Install android SDK
       run: |
-       ls -la /home/runner/AndroidSDK
-       yes | androidsdk "platforms;android-24"  
+       
+       yes | androidsdk "platforms;android-24" 
+       ls -la /home/runner/AndroidSDK 
     - name: Build with Gradle
       run: ./gradlew build
     - name: Grant execute permission for gradlew
