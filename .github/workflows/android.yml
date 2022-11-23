@@ -24,6 +24,7 @@ jobs:
     - name: Install SDK Manager
       run: |
        pwd
+       sudo apt install google-android-emulator-installer
        sudo snap install android-studio --classic
        sudo snap install android-terminal-emulator --edge --devmode
        sudo snap install androidsdk
