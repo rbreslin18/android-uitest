@@ -16,5 +16,5 @@
   -->
 
 <resources>
-    <string name="app_name">ServiceTestRule Basic Sample</string>
+    <style name="AppTheme" parent="android:Theme.Material.Light"/>
 </resources>

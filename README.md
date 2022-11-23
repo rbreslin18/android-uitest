@@ -1,43 +1,25 @@
-## Android UI tests - Example Application
+# Basic sample for ServiceTestRule
 
-This is a **Android** example app to study purposes about UI instrumentation tests, using [Espresso](https://developer.android.com/training/testing/ui-testing/espresso-testing.html) framework.
+This rule provides a simplified mechanism to start and shutdown your service before and after
+the duration of your test. It also guarantees that the service is successfully connected when starting
+(or binding to) a service. The service can be started (or bound) using one of the helper methods.
+It will automatically be stopped (or unbound) after the test completes and any methods annotated with @After are finished.
 
-For this example, we are using the **Login Activity** Android Studio template
+Note: This rule doesn't support `IntentService` because it's automatically destroyed when
+`IntentService#onHandleIntent(android.content.Intent)`
+ finishes all outstanding commands. So there is no guarantee to establish a successful connection in a timely manner.
 
- **_Screenshot_**
+This project uses the Gradle build system. You don't need an IDE to build and execute it but Android Studio is recommended.
 
-![First Screen](https://raw.githubusercontent.com/mfdeveloper/android-uitest/master/images/android-test-screen.png)
+1. Download the project code, preferably using `git clone`.
+1. Open the Android SDK Manager (*Tools* Menu | *Android*) and make sure you have installed the *Support Repository* under *Extras*.
+1. In Android Studio, select *File* | *Open...* and point to the `./build.gradle` file.
+1. Check out the relevant code:
+    * The application under test is located in `src/main/java`
+    * Tests are in `src/androidTest/java`
+1. Connect a device or start an emulator
+1. Run the newly created configuration
 
-### Getting Started
+The application will be started on the device/emulator and a series of actions will be performed automatically.
 
-1. Clone this repo
-2. With **Android Studio**, click on `File` => `Open` and select the cloned folder
-3. Open the class **`LoginBehaviorTest`** and click on green arrow beside of the method `performAuth_sameActivity()`
-
-   Or, right-click on the test class in the projects panel, and select `Run`.
-   > **Obs:** More explanation about running tests, see this link: [Running Espresso tests](http://www.vogella.com/tutorials/AndroidTestingEspresso/article.html#espresso_runningespressotests)
-
-4. Choice a avd emulator. The UI test will run like the screen below:
-
-![Login UI Test](https://raw.githubusercontent.com/mfdeveloper/android-uitest/master/images/android-uitest-login.gif)
-
-### Links: tutorials and questions
-
-The refence links below contains tutorials and helpers about Android testing.
-
-##### Google (official documentation)
-
-* [Testing UI for a Single App](https://developer.android.com/training/testing/ui-testing/espresso-testing.html#build)
-* [Testing Support Library **(AndroidJUnitRunner, UI Automator)**](https://developer.android.com/topic/libraries/testing-support-library/index.html)
-* [Espresso - google.github.io](https://google.github.io/android-testing-support-library/docs/espresso/index.html)
-
-##### Questions - Errors, Exceptions and Doubts
-
-* [Cannot resolve symbol 'AndroidJUnit4'](http://stackoverflow.com/questions/30603487/cannot-resolve-symbol-androidjunit4)
-* [Conflict with dependency 'support-annotations'](http://stackoverflow.com/questions/33317555/conflict-with-dependency-com-android-supportsupport-annotations-resolved-ver)
-* [Cannot launch AVD in emulator. Output: **sh: 1: glxinfo**](http://stackoverflow.com/questions/36258908/cannot-launch-avd-in-emulator-output-sh-1-glxinfo)
-* [**AssertionFailedError:** No tests found](http://stackoverflow.com/questions/31868008/getting-junit-framework-assertionfailederror-no-tests-found-in-package-when-u)
-* [Espresso test that your Activity finishes with the expected result.](https://gist.github.com/saxophone/961ceceea43f8501cbaf)
-
-##### Tutorials
-* [Android user interface testing with Espresso - Tutorial](http://www.vogella.com/tutorials/AndroidTestingEspresso/article.html)
+If you are using Android Studio, the *Run* window will show the test results.
