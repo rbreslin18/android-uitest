@@ -25,12 +25,11 @@ jobs:
       run: |
        pwd
        sudo snap install androidsdk
-       ls -la /home/runner/AndroidSDK
+       
        export SDK_ROOT=/home/runner/AndroidSDK
        pwd
     - name: Install android SDK
       run: |
-       
        yes | androidsdk "platforms;android-24" 
        ls -la /home/runner/AndroidSDK 
     - name: Build with Gradle
