@@ -1,4 +1,4 @@
-name: Android CI
+name: Android CI with SDK
 
 on:
   push:
@@ -21,8 +21,8 @@ jobs:
         cache: gradle
     - name: Echo javahome
       run: echo $JAVA_HOME
-    - name: Echo javahome
-      run: sdkmanager "platforms;android-24" 
+    - name: Install Android Sdk
+      run: sudo apt update && sudo apt install android-sdk 
     - name: Build with Gradle
       run: ./gradlew build
     - name: Grant execute permission for gradlew
