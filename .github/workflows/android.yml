@@ -23,6 +23,8 @@ jobs:
       run: echo $JAVA_HOME
     - name: Install Android Sdk
       run: sudo apt update && sudo apt install android-sdk 
+    - name: Echo javahome
+      run: yes | sdkmanager "platforms;android-24" 
     - name: Build with Gradle
       run: ./gradlew build
     - name: Grant execute permission for gradlew
