@@ -21,8 +21,6 @@ jobs:
         cache: gradle
     - name: Echo javahome
       run: echo $JAVA_HOME
-    - name: Install Android Sdk
-      run: sudo apt update && sudo apt install android-sdk 
     - name: Install SDK Manager
       run: |
        pwd
@@ -30,7 +28,7 @@ jobs:
        wget https://dl.google.com/android/repository/commandlinetools-linux-9123335_latest.zip
        unzip commandlinetools-linux-9123335_latest.zip
        cp -R cmdline-tools android-sdk/cmdline-tools/latest
-       ls -la android-sdk
+       ls -la android-sdk/cmdline-tools
     - name: Install android SDK
       run: yes | /home/runner/work/android-uitest/android-sdk/cmdline-tools/latest/cmdline-tools/bin/sdkmanager "platforms;android-24" 
     - name: Build with Gradle
