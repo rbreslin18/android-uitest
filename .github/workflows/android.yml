@@ -24,7 +24,6 @@ jobs:
     - name: Install SDK Manager
       run: |
        pwd
-       sudo apt install google-android-emulator-installer
        sudo snap install androidsdk
        echo $ANDROID_HOME
        echo $ANDROID_SDK_ROOT
@@ -43,4 +42,4 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Emulator Test
-      run: emulator -list-avds
+      run: emulator 
