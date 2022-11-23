@@ -32,6 +32,7 @@ jobs:
        yes | androidsdk "platforms;android-24" 
        yes | androidsdk "platform-tools" 
        yes | androidsdk "emulator" 
+       yes | androidsdk "avdmanager"
        ls -la /home/runner/AndroidSDK/emulator 
     - name: Build with Gradle
       run: |
