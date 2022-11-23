@@ -29,7 +29,7 @@ jobs:
        wget https://dl.google.com/android/repository/commandlinetools-linux-9123335_latest.zip
        unzip commandlinetools-linux-9123335_latest.zip
     - name: Install android SDK
-      run: yes | sdkmanager "platforms;android-24" 
+      run: yes | /home/runner/work/android-uitest/android-uitest/cmdline-tools/bin/sdkmanager "platforms;android-24" 
     - name: Build with Gradle
       run: ./gradlew build
     - name: Grant execute permission for gradlew
