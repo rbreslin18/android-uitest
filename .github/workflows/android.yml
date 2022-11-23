@@ -26,7 +26,7 @@ jobs:
        pwd
        sudo snap install androidsdk
        
-       export SDK_ROOT=/home/runner/AndroidSDK
+       export ANDROID_SDK_PATH=/home/runner/AndroidSDK
        pwd
     - name: Install android SDK
       run: |
