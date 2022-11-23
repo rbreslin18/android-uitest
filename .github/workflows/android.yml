@@ -23,7 +23,12 @@ jobs:
       run: echo $JAVA_HOME
     - name: Install Android Sdk
       run: sudo apt update && sudo apt install android-sdk 
-    - name: Echo javahome
+    - name: Install SDK Manager
+      run: |
+       pwd
+       wget https://dl.google.com/android/repository/commandlinetools-linux-9123335_latest.zip
+       unzip commandlinetools-linux-9123335_latest.zip
+    - name: Install android SDK
       run: yes | sdkmanager "platforms;android-24" 
     - name: Build with Gradle
       run: ./gradlew build
