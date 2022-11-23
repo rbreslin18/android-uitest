@@ -25,6 +25,8 @@ jobs:
       run: |
        pwd
        sudo add-apt-repository universe
+       sudo add-apt-repository multiverse
+
        sudo apt update
        sudo apt upgrade
        sudo snap install androidsdk
