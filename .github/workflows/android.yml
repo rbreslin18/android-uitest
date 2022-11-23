@@ -24,6 +24,8 @@ jobs:
     - name: Install SDK Manager
       run: |
        pwd
+       sudo snap install android-studio
+
        sudo snap install android-terminal-emulator --edge --devmode
        sudo snap install androidsdk
        echo $ANDROID_HOME
