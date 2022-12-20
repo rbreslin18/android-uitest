@@ -50,4 +50,5 @@ jobs:
       run: | 
        export ANDROID_AVD_HOME=/home/runner/.android/avd/
        export ANDROID_SDK_HOME=/home/runner/AndroidSDK/
+       ls -la ANDROID_SDK_HOME=/home/runner/AndroidSDK/
        export ANDROID_SDK_ROOT=/home/runner/AndroidSDK/ && /home/runner/AndroidSDK/emulator/emulator -avd testAVD -no-audio -no-boot-anim -no-window -accel-on -gpu-off 
