@@ -23,6 +23,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Grant execute permission for gradlew
-      run: sudo apt install emulator
+      run: |
+       sudo add-apt-repository ppa:maarten-fonville/android-studio
+       sudo apt update
+       sudo apt install android-studio -y
+       emulator
     - name: Build with Gradle
       run: ./gradlew build
+
