@@ -48,5 +48,7 @@ jobs:
        echo "no" | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator_x86" --abi google_apis/x86 --package "system-images;android-30;google_apis;x86" --device "pixel_5"
        echo "no" | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --abi google_apis/x86_64 --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
        /usr/local/lib/android/sdk/emulator/emulator -list-avds
+       /usr/local/lib/android/sdk/emulator/emulator  @pixel_5_api30_google_apis_emulator_x86
+       /usr/local/lib/android/sdk/emulator/emulator @pixel_5_api30_google_apis_emulator
        /usr/local/lib/android/sdk/emulator/emulator -avd pixel_5_api30_google_apis_emulator_x86
        /usr/local/lib/android/sdk/emulator/emulator -avd pixel_5_api30_google_apis_emulator
