@@ -26,7 +26,11 @@ jobs:
        sudo apt-get update
        sudo apt-get install unzip
        curl https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o /home/runner/commandlinetools-linux-9477386_latest.zip
+       mkdir /home/runner/Android/Sdk
        unzip /home/runner/commandlinetools-linux-9477386_latest.zip -d /home/runner/cmdline-tools
+       cp -a /home/runner/cmdline-tools/. /usr/local/lib/android/sdk/
+       echo "copying cmdline tools over"
+       ls -la /usr/local/lib/android/sdk/
        pwd
        ls -la 
        ls -la /home/runner/
@@ -34,12 +38,12 @@ jobs:
       run: ./gradlew build
     - name: Setup Emulator
       run: | 
-       /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --list
+       /usr/local/lib/android/sdk/cmdline-tools/bin/sdkmanager --list
        ls -la /home/runner/
        ls -la /home/runner/cmdline-tools/
-       yes | /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --licenses
-       /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --install "system-images;android-30;google_apis;x86_64"
-       echo "no" | /home/runner/cmdline-tools/cmdline-tools/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
+       yes | /usr/local/lib/android/sdk/cmdline-tools/bin/sdkmanager --licenses
+       /usr/local/lib/android/sdk/cmdline-tools/bin/sdkmanager --install "system-images;android-30;google_apis;x86_64"
+       echo "no" | /usr/local/lib/android/sdk/cmdline-tools/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
        ls -la /home/runner/emulator
-       /home/runner/emulator/emulator -list-avds
-       /home/runner/emulator/emulator -avd pixel_5_api30_google_apis_emulator
+       /usr/local/lib/android/sdk/emulator/emulator -list-avds
+       /usr/local/lib/android/sdk/emulator -avd pixel_5_api30_google_apis_emulator
