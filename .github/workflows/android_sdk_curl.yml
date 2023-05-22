@@ -40,7 +40,7 @@ jobs:
        yes | /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --licenses
        /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --install "system-images;android-30;google_apis;x86_64"
        echo "no" | /home/runner/cmdline-tools/cmdline-tools/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
-       /home/runner/emulator -list-avds
+       ls -la /home/runner/emulator
        ls -la /home/runner/cmdline-tools/cmdline-tools/bin/
        ls -la /home/runner/
        ls -la
