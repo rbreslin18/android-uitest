@@ -35,6 +35,6 @@ jobs:
     - name: Setup Emulator
       run: | 
        ls -la /home/runner/
-       ls -la /home/runner/cmdline-tools/bin/
+       ls -la /home/runner/cmdline-tools/
        /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --install "system-images;android-30;google_atd;arm64-v8a"
        echo "no" | /home/runner/cmdline-tools/cmdline-tools/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_atd_emulator" --package "system-images;android-30;google_atd;arm64-v8a" --tag "google_atd" --abi "arm64-v8a" --device "pixel_5"
