@@ -31,3 +31,5 @@ jobs:
        pwd
        ls -la 
        ls -la /home/runner/
+    - name: Echo javahome
+      run: ./gradlew build
