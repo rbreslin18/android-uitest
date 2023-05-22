@@ -27,7 +27,7 @@ jobs:
       run: | 
        printenv
        sdkmanager --list
-       yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+       echo "yes" | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
        sdkmanager --install "system-images;android-30;google_apis;x86_64"
        sdkmanager --install "system-images;android-30;google_apis;x86"
        echo "no" | avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator_x86" --abi google_apis/x86 --package "system-images;android-30;google_apis;x86" --device "pixel_5"
