@@ -23,5 +23,6 @@ jobs:
       run: echo $JAVA_HOME
     - name: Install SDK Manager
       run: |
+       sudo apt-get update
        sudo apt install android-sdk
        ls -la /home/runner/
