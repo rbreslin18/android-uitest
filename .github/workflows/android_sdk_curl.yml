@@ -35,6 +35,12 @@ jobs:
        pwd
        ls -la 
        ls -la /home/runner/
+    - name: Check KVM 
+      run: .|
+       echo "Checking if kvm is enabled"
+       sudo apt-get install cpu-checker
+       egrep -c '(vmx|svm)' /proc/cpuinfo
+       kvm-ok
     - name: Build 
       run: ./gradlew build
     - name: Setup Emulator
