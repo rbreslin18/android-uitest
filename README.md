@@ -4,7 +4,7 @@ This rule provides a simplified mechanism to start and shutdown your service bef
 the duration of your test. It also guarantees that the service is successfully connected when starting
 (or binding to) a service. The service can be started (or bound) using one of the helper methods.
 It will automatically be stopped (or unbound) after the test completes and any methods annotated with @After are finished.
-
+ 
 Note: This rule doesn't support `IntentService` because it's automatically destroyed when
 `IntentService#onHandleIntent(android.content.Intent)`
  finishes all outstanding commands. So there is no guarantee to establish a successful connection in a timely manner.
