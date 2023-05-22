@@ -24,7 +24,7 @@ jobs:
     - name: Install SDK Manager
       run: |
        sudo apt-get update
-       # sudo apt-get install libpulse0
+       sudo apt-get install libpulse0
        sudo apt-get install unzip
        curl https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o /home/runner/commandlinetools-linux-9477386_latest.zip
        unzip /home/runner/commandlinetools-linux-9477386_latest.zip -d /home/runner/cmdline-tools
