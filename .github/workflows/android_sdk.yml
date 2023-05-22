@@ -1,4 +1,4 @@
-name: Android CI with SDK
+name: Emulator Test
 
 on:
   push:
