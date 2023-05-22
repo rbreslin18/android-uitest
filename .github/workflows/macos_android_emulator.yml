@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  Android-Build-and-Test:
+  Android-Build-and-Test-on-macos:
 
     runs-on: macos-latest
 
