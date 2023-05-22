@@ -26,7 +26,6 @@ jobs:
        sudo apt-get update
        sudo apt-get install unzip
        curl https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o /home/runner/commandlinetools-linux-9477386_latest.zip
-       mkdir /home/runner/Android/Sdk
        unzip /home/runner/commandlinetools-linux-9477386_latest.zip -d /home/runner/cmdline-tools
        cp -a /home/runner/cmdline-tools/. /usr/local/lib/android/sdk/
        echo "copying cmdline tools over"
