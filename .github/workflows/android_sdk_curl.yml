@@ -45,4 +45,4 @@ jobs:
        /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --install "system-images;android-30;google_apis;x86_64"
        echo "no" | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
        /usr/local/lib/android/sdk/emulator/emulator -list-avds
-       /usr/local/lib/android/sdk/emulator -avd pixel_5_api30_google_apis_emulator
+       /usr/local/lib/android/sdk/emulator/emulator -avd pixel_5_api30_google_apis_emulator
