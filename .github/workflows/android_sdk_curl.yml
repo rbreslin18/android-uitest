@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  Android-Build-and-Test:
 
     runs-on: ubuntu-latest
 
@@ -23,7 +23,6 @@ jobs:
       run: echo $JAVA_HOME
     - name: Install SDK Manager
       run: |
-     
        sudo apt-get update
        sudo apt-get install unzip
        curl https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o /home/runner/commandlinetools-linux-9477386_latest.zip
@@ -31,5 +30,9 @@ jobs:
        pwd
        ls -la 
        ls -la /home/runner/
-    - name: Echo javahome
+    - name: Build 
       run: ./gradlew build
+    - name: Setup Emulator
+      run: | 
+       /home/runner/cmdline-tools/bin/sdkmanager --install "system-images;android-30;google_atd;arm64-v8a"
+       echo "no" | /home/runner/cmdline-tools/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_atd_emulator" --package "system-images;android-30;google_atd;arm64-v8a" --tag "google_atd" --abi "arm64-v8a" --device "pixel_5"
