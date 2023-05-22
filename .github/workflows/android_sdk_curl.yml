@@ -24,7 +24,7 @@ jobs:
     - name: Install SDK Manager
       run: |
        sudo apt-get update
-       sudo apt-get install libpulse0
+       # sudo apt-get install libpulse0
        sudo apt-get install unzip
        curl https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -o /home/runner/commandlinetools-linux-9477386_latest.zip
        unzip /home/runner/commandlinetools-linux-9477386_latest.zip -d /home/runner/cmdline-tools
@@ -44,6 +44,6 @@ jobs:
        ls -la /home/runner/cmdline-tools/
        yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
        /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --install "system-images;android-30;google_apis;x86_64"
-       echo "no" | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
+       echo "no" | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/avdmanager --verbose create avd --force --name "pixel_5_api30_google_apis_emulator" --abi google_apis/x86_64 --package "system-images;android-30;google_apis;x86_64" --device "pixel_5"
        /usr/local/lib/android/sdk/emulator/emulator -list-avds
        /usr/local/lib/android/sdk/emulator/emulator -avd pixel_5_api30_google_apis_emulator
