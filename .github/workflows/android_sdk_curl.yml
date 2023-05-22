@@ -34,6 +34,7 @@ jobs:
       run: ./gradlew build
     - name: Setup Emulator
       run: | 
+       sdkmanager --list
        ls -la /home/runner/
        ls -la /home/runner/cmdline-tools/
        echo "yes" | /home/runner/cmdline-tools/cmdline-tools/bin/sdkmanager --licenses
